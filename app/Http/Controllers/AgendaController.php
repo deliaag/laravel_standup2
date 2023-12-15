@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
+use App\Models\Comediant;
+use App\Models\Event;
 use App\Http\Requests;
 
 
@@ -15,6 +17,8 @@ class AgendaController extends Controller
      */
     public function index(Request $request)
     {
+        $comedians = Comediant::all();
+        $events = Event::all();
         $agendas = Agenda::orderBy('name','ASC')->paginate(5);
         $value=($request->input('page',1)-1)*5;
         foreach ($agendas as $agenda)
@@ -32,7 +36,9 @@ class AgendaController extends Controller
      */
     public function create()
     {
-        return view('agendas.create');
+        $comedians = Comediant::all();
+        $events = Event::all();
+        return view('agendas.create', compact('comedians', 'events'));
     }
 
     /**

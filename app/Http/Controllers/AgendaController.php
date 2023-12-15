@@ -19,14 +19,16 @@ class AgendaController extends Controller
     {
         $comedians = Comediant::all();
         $events = Event::all();
-        $agendas = Agenda::orderBy('name','ASC')->paginate(5);
+        $agendas = Agenda::orderBy('start','ASC')->paginate(5);
         $value=($request->input('page',1)-1)*5;
-        foreach ($agendas as $agenda)
-        {
-        $agenda->event_name = $agenda->event->name;
-        $agenda->comedian_name = $agenda->comedian->name;
-        }
-        return view('agendas.list',compact('agendas'))->with('i',$value);
+        //foreach ($agendas as $agenda)
+        //{
+        //$agenda->event_name = $agenda->event->name;
+        //$agenda->comedian_name = $agenda->comedian->name;
+        //}
+        //return view('agendas.list',compact('agendas'))->with('i',$value);
+        return view('agendas.list', compact('agendas', 'comedians', 'events'))->with('i', $value);
+
     }
 
     /**

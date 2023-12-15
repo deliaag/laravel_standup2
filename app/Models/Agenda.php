@@ -18,9 +18,9 @@ class Agenda extends Model
         return $this->belongsTo(Event::class, 'id_event', 'id_event');
     }
 
-    public function comedian()
+    public function comediant()
     {
-        return $this->belongsTo(Comedian::class, 'id_comediant', 'id_comediant');
+        return $this->belongsTo(Comediant::class, 'id_comediant', 'id_comediant');
     }
 
    

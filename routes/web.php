@@ -2,7 +2,8 @@
 
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ComediantController; 
+use App\Http\Controllers\ComediantController;
+use App\Http\Controllers\EventController; 
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,7 @@ Route::get('/', [ContactController::class, 'index']);
 Route::resource('contacts', ContactController::class);
 
 Route::get('/', [ComediantController::class, 'index']);  
-Route::resource('comedians', ComediantController::class); 
+Route::resource('comedians', ComediantController::class);
+
+Route::get('/', [EventController::class, 'index']);  
+Route::resource('events', EventController::class); 

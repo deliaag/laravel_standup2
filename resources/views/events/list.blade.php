@@ -86,6 +86,7 @@
             <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
 
             <!-- Introduce nr pagina --> 
 

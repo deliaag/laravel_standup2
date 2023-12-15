@@ -16,7 +16,7 @@
 
         <div class="panel-heading"> 
 
-            Lista contactelor 
+            Lista agendelor 
 
         <div class="panel-body"> 
 
@@ -24,7 +24,7 @@
 
                 <div class="pull-right"> 
 
-                    <a href="/contacts/create" class="btn btn-default">Adaugare Contact Nou</a> 
+                    <a href="/agendas/create" class="btn btn-default">Adaugare Agenda Noua</a> 
 
                 </div> 
 
@@ -36,35 +36,45 @@
 
                     <th width="20">No</th> 
 
-                    <th>Titlu</th> 
+                    <th>INCEPE LA ORA:</th> 
 
-                    <th>Descriere</th> 
+                    <th>SE TERMINA LA ORA: </th>
+
+                    <th>DATA: </th>
+
+                    <th>ID EVENIMENT: </th>
+
+                    <th>ID COMEDIANT: </th> 
 
                     <th width="300">Actiune</th> 
 
                 </tr> 
 
-                @if (count($contacts) > 0) 
+                @if (count($agendas) > 0) 
 
-                    @foreach ($contacts as $key => $contact) 
+                    @foreach ($agendas as $key => $agenda) 
 
                         <tr> 
 
                             <td>{{ ++$i }}</td> 
 
-                            <td>{{ $contact->name }}</td> 
+                            <td>{{ $agenda->start }}</td> 
 
-                            <td>{{ $contact->email }}</td> 
+                            <td>{{ $agenda->finish }}</td> 
 
-                            <td>{{ $contact->phone }}</td> 
+                            <td>{{ $agenda->date }}</td>
+
+                            <td>{{ $agenda->id_event }}</td> 
+
+                            <td>{{ $agenda->id_comediant }}</td>
 
                             <td> 
 
-                                <a class="btn btn-success" href="{{ route('contacts.show', $contact->id_contact) }}">Vizualizare</a> 
+                                <a class="btn btn-success" href="{{ route('agendas.show', $agenda->id_agenda) }}">Vizualizare</a> 
 
-                                <a class="btn btn-primary" href="{{ route('contacts.edit', $contact->id_contact) }}">Modificare</a> 
+                                <a class="btn btn-primary" href="{{ route('agendas.edit', $agenda->id_agenda) }}">Modificare</a> 
 
-                                {{ Form::open(['method' => 'DELETE', 'route' => ['contacts.destroy', $contact->id_contact], 'style' => 'display:inline']) }} 
+                                {{ Form::open(['method' => 'DELETE', 'route' => ['agendas.destroy', $agenda->id_agenda], 'style' => 'display:inline']) }} 
 
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
@@ -80,24 +90,23 @@
 
                     <tr> 
 
-                        <td colspan="4">Nu exista contacte!</td> 
+                        <td colspan="4">Nu exista agende!</td> 
 
                     </tr> 
 
                 @endif 
 
             </table>
+
             <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
-            <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
-
-
+            <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
 
 
             <!-- Introduce nr pagina --> 
 
-            {{ $contacts->render() }} 
+            {{ $agendas->render() }} 
 
         </div> 
 

@@ -87,7 +87,7 @@
                 @endif 
 
             </table>
-
+            <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a> 
 
             <!-- Introduce nr pagina --> 
 

@@ -33,7 +33,7 @@
 
             <div class="form-group"> 
 
-                <strong>SE TERMINA LA ORA: </strong>{{ $agenda->final}} 
+                <strong>SE TERMINA LA ORA: </strong>{{ $agenda->finish}} 
 
             </div>
 
@@ -49,7 +49,7 @@
 
             <div class="form-group">
 
-                <strong>ID_EVENT : </strong>{{ $agenda->event->id_event }}
+                <strong>EVENIMENT : </strong>{{ $agenda->event->name }}
 
             </div>
 
@@ -57,7 +57,7 @@
 
             <div class="form-group">
 
-                <strong>ID_COMEDIANT : </strong>{{ $agenda->comediant->id_comediant }}
+                <strong>COMEDIANT : </strong>{{ $agenda->comediant->name }}
 
             </div>
 

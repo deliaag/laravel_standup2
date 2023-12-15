@@ -42,9 +42,9 @@
 
                     <th>DATA: </th>
 
-                    <th>ID EVENIMENT: </th>
+                    <th> EVENIMENT: </th>
 
-                    <th>ID COMEDIANT: </th> 
+                    <th> COMEDIANT: </th> 
 
                     <th width="300">Actiune</th> 
 
@@ -64,9 +64,9 @@
 
                             <td>{{ $agenda->date }}</td>
 
-                            <td>{{ $agenda->id_event }}</td> 
+                            <td>{{ $agenda->event->name }}</td> 
 
-                            <td>{{ $agenda->id_comediant }}</td>
+                            <td>{{ $agenda->comediant->name }}</td>
 
                             <td> 
 
@@ -82,7 +82,7 @@
 
                             </td> 
 
-                        </tr> 
+                        </tr>
 
                     @endforeach 
 

@@ -49,6 +49,9 @@
                     </tr>
                 @endif
             </table>
+            <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
 
             <!-- Introduce nr pagina -->
             {{ $comedians->render() }}

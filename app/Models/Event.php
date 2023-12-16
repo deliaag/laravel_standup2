@@ -22,6 +22,10 @@ class Event extends Model
     {
         return $this->hasMany('App\EventContact', 'id_rep_cont');
     }
+     public function spContacts()
+    {
+        return $this->hasMany('App\SpContact', 'id_contact');
+    }
 
     //use HasFactory;
 }

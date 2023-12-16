@@ -23,7 +23,7 @@
                 <div class="pull-right">
                     @if (Auth::user()->admin === 1)
 
-                    <a href="/events/create" class="btn btn-default">Adaugare Eveniment Nou</a>
+                    <a href="/events/create" class="btn btn-info">Adaugare Eveniment Nou</a>
 
                     @endif
 
@@ -93,8 +93,10 @@
             <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('partnerSponsors.index')}}'">Partenri/Sponsori</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('spContacts.index')}}'">Partenri/Sponsori Contact</button>
 
             <!-- Introduce nr pagina --> 
 

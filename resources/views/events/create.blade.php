@@ -1,10 +1,10 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
 @section('content') 
 
     <div class="panel panel-default"> 
 
-        <div class="panel-heading">Adaugă Eveniment noua</div> 
+        <div class="panel-heading">Adaugă Eveniment </div> 
 
         <div class="panel-body"> 
 
@@ -74,7 +74,7 @@
 
                 <input type="submit" value="Adauga Eveniment" class="btn btn-info"> 
 
-                <a href="{{ route('events.index') }}" class="btn btn-default">Cancel</a> 
+                <a href="{{ route('events.index') }}" class="btn btn-primary">Cancel</a> 
 
             </div> 
 

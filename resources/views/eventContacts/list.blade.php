@@ -26,7 +26,7 @@
                     @if (Auth::user()->admin === 1)
 
 
-                    <a href="/eventContacts/create" class="btn btn-default">Adaugare event contact Nou</a>
+                    <a href="/eventContacts/create" class="btn btn-info">Adaugare event contact </a>
 
                     @endif
 
@@ -69,7 +69,7 @@
 
                                 <a class="btn btn-primary" href="{{ route('eventContacts.edit', $eventContact->id_rep_cont) }}">Modificare</a> 
 
-                                {{ Form::open(['method' => 'DELETE', 'route' => ['agendas.destroy', $eventContact->id_rep_cont], 'style' => 'display:inline']) }} 
+                                {{ Form::open(['method' => 'DELETE', 'route' => ['eventContacts.destroy', $eventContact->id_rep_cont], 'style' => 'display:inline']) }} 
 
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
@@ -95,11 +95,13 @@
 
             </table>
 
-            <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
+
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('partnerSponsors.index')}}'">Parteneri/Sponsori</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'"> Agenda</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('spContacts.index')}}'">Parteneri/Sponsori Contact</button>
 
             <!-- Introduce nr pagina --> 
 

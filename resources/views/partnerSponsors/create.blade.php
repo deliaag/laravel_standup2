@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
     <div class="panel panel-default">
@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 <input type="submit" value="Adauga Partnere / Sponsor" class="btn btn-info">
-                <a href="{{ route('partnerSponsors.index') }}" class="btn btn-default">Cancel</a>
+                <a href="{{ route('partnerSponsors.index') }}" class="btn btn-primary">Cancel</a>
             </div>
 
             {{ Form::close() }}

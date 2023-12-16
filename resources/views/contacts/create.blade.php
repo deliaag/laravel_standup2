@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
 @section('content') 
 
@@ -76,7 +76,7 @@
 
             <input type="submit" value="Adauga Contact" class="btn btn-info"> 
 
-            <a href="{{ route('contacts.index') }}" class="btn btn-default">Cancel</a> 
+            <a href="{{ route('contacts.index') }}" class="btn btn-primary">Cancel</a> 
 
         </div> 
 

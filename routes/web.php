@@ -8,6 +8,7 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\EventContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PartnerSponsorController;
+use App\Http\Controllers\SpContactController; 
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -78,5 +79,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //partnerSPONSOR//
     Route::get('/partnerSponsors', [PartnerSponsorController::class, 'index']);     
-    Route::resource('partnerSponsors', PartnerSponsorController::class); 
+    Route::resource('partnerSponsors', PartnerSponsorController::class);
+
+    //spCONTACT//
+    Route::get('/', [SpContactController::class, 'index']);
+    Route::resource('spContacts', SpContactController::class); 
 });

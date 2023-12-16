@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
@@ -9,7 +9,7 @@
         <div class="panel-body">
 
             <div class="pull-right">
-                <a class="btn btn-default" href="{{ route('comedians.index')}}">Inapoi</a>
+                <a class="btn btn-primary" href="{{ route('comedians.index')}}">Inapoi la Comedianti</a>
             </div>
 
             <div class="form-group">

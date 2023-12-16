@@ -23,6 +23,7 @@
                         <a href="{{ route('agendas.index') }}" class="btn btn-primary">Agende</a>
                         <a href="{{ route('eventContacts.index') }}" class="btn btn-primary">Event Contact</a>
                         <a href="{{ route('partnerSponsors.index') }}" class="btn btn-primary">Parteneri/Sponsori</a>
+                        <a href="{{ route('spContacts.index') }}" class="btn btn-primary">Parteneri/Sponsori CONTACT </a>
                     </div>
             </div>
             </div>

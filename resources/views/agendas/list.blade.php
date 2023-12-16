@@ -25,7 +25,7 @@
                 <div class="pull-right">
                      @if (Auth::user()->admin === 1)
 
-                    <a href="/agendas/create" class="btn btn-default">Adaugare Agenda Noua</a> 
+                    <a href="/agendas/create" class="btn btn-info">ADAUGA AGENDA</a> 
 
                     @endif
 
@@ -110,7 +110,8 @@
             <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
-
+            <button class="btn btn-primary" onclick="window.location.href='{{route('partnerSponsors.index')}}'">PARTENER/SPONSOR</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('spContacts.index')}}'">PARTENER/SPONSOR Contact</button>
 
             <!-- Introduce nr pagina --> 
 

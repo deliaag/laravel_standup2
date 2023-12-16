@@ -1,4 +1,4 @@
-@extends('layouts.master')  
+@extends('layouts.app')  
 
 @section('content')
 
@@ -15,7 +15,7 @@
             <div class="pull-right">  
 
 
-                <a class="btn btn-default" href="{{ route('eventContacts.index') }}">Inapoi</a>  
+                <a class="btn btn-primary" href="{{ route('eventContacts.index') }}">Inapoi la Event Contact</a>  
 
             </div>   
   

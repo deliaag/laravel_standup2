@@ -17,7 +17,7 @@
                 <div class="pull-right">
                     @if (Auth::user()->admin === 1)
 
-                    <a href="/comedians/create" class="btn btn-default">Adaugare Comediant Nou</a>
+                    <a href="/comedians/create" class="btn btn-info">Adaugare Comediant Nou</a>
 
                     @endif
                 </div>
@@ -56,12 +56,13 @@
                     </tr>
                 @endif
             </table>
-            <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
+
             <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('partnerSponsors.index')}}'">Parteneri/Sponsori</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
-
+            <button class="btn btn-primary" onclick="window.location.href='{{route('spContacts.index')}}'">Parteneri/Sponsori Contact</button>
 
             <!-- Introduce nr pagina -->
             {{ $comedians->render() }}

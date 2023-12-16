@@ -24,7 +24,7 @@
 
                 <div class="pull-right">
                 @if (Auth::user()->admin === 1)
-                    <a href="/partnerSponsors/create" class="btn btn-default">Adaugare Partener / Sponsor Nou</a> 
+                    <a href="/partnerSponsors/create" class="btn btn-info">Adaugare Partener / Sponsor Nou</a> 
                 </div> 
                 @endif
             </div> 
@@ -92,7 +92,7 @@
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
-
+            <button class="btn btn-primary" onclick="window.location.href='{{route('spContacts.index')}}'">Parteneri/Sponsori Contact</button
             <!-- Introduce nr pagina --> 
 
             {{ $partnerSponsors->render() }} 

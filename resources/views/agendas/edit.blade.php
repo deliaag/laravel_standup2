@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
 @section('content') 
 
@@ -65,7 +65,7 @@
 
             <div class="form-group"> 
                 <input type="submit" value="Salvare Modificari Agenda" class="btn btn-info"> 
-                <a href="{{ route('agendas.index') }}" class="btn btn-default">Cancel</a> 
+                <a href="{{ route('agendas.index') }}" class="btn btn-primary">Cancel</a> 
             </div> 
 
             {!! Form::close() !!} 

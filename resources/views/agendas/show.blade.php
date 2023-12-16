@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
  
 
@@ -16,7 +16,7 @@
 
             <div class="pull-right"> 
 
-                <a class="btn btn-default" href="{{ route('agendas.index') }}">Inapoi</a> 
+                <a class="btn btn-primary" href="{{ route('agendas.index') }}">Inapoi la AGENDE </a> 
 
             </div>  
  

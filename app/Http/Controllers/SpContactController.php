@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Contact; 
+use App\Models\PartnerSponsor; 
 use App\Models\Event;
-use App\Models\EventContact; 
+use App\Models\SpContact; 
 use App\Http\Requests; 
 
   
 
-class EventContactController extends Controller
+class SpContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +20,9 @@ class EventContactController extends Controller
      */
     public function index(Request $request)
     {
-        $eventContacts = EventContact::all(); 
+        $spContacts = SpContact::all(); 
 
-        $contacts = Contact::all(); 
+        $partnerSponsors = PartnerSponsor::all(); 
 
         $events = Event::all(); 
 
@@ -30,19 +30,19 @@ class EventContactController extends Controller
 
         //$value=($request->input('page',1)-1)*5; 
 
-        foreach ($eventContacts as $eventContact) 
+        foreach ($spContacts as $spContact) 
 
         { 
 
-        $eventContact->event_name = $eventContact->event->name; 
+        $spContact->event_name = $spContact->event->name; 
 
-        $eventContact->contact_name = $eventContact->contact->name; 
+        $spContact->partnerSponsor_name = $spContact->partnerSponsor->name; 
 
         } 
 
         //return view('eventContacts.list',compact('eventContacts'))->with('i',$value); 
 
-        return view('eventContacts.list', compact('eventContacts', 'contacts', 'events'));
+        return view('spContacts.list', compact('spContacts', 'partnerSponsors', 'events'));
         //->with('i', $value); 
 
   
@@ -55,11 +55,11 @@ class EventContactController extends Controller
      */
     public function create()
     {
-        $contacts = Contact::all(); 
+        $partnerSponsors = PartnerSponsor::all(); 
 
         $events = Event::all(); 
 
-        return view('eventContacts.create', compact('contacts', 'events'));
+        return view('spContacts.create', compact('partnerSponsors', 'events'));
     }
 
     /**
@@ -72,13 +72,13 @@ class EventContactController extends Controller
 {
     $this->validate($request, [ 
         'id_event' => 'required', 
-        'id_contact' => 'required', 
+        'id_sp' => 'required', 
     ]); 
 
     // create new agenda 
-    EventContact::create($request->all()); 
+    SpContact::create($request->all()); 
 
-    return redirect()->route('eventContacts.index')->with('success', 'Your event contact added successfully!');
+    return redirect()->route('partnerSponsors.index')->with('success', 'Your sponsor/partner contact added successfully!');
 }
 
     /**
@@ -89,9 +89,9 @@ class EventContactController extends Controller
      */
     public function show($id)
     {
-         $eventContact = EventContact::find($id);    
+         $spContact = SpContact::find($id);    
 
-        return view('eventContacts.show',compact('eventContact'));  
+        return view('spContacts.show',compact('spContact'));  
     }
 
     /**
@@ -102,9 +102,9 @@ class EventContactController extends Controller
      */
     public function edit($id)
     {
-        $eventContact = EventContact::find($id);  
+        $spContact = SpContact::find($id);  
 
-        return view('eventContacts.edit', compact('eventContact'));  
+        return view('spContacts.edit', compact('spContact'));  
     }
 
     /**
@@ -118,12 +118,12 @@ class EventContactController extends Controller
 {
     $this->validate($request, [  
         'id_event' => 'required',  
-        'id_contact' => 'required',  
+        'id_sp' => 'required',  
     ]);  
 
     EventContact::find($id)->update($request->all());  
 
-    return redirect()->route('eventContacts.index')->with('success','event contact  updated successfully');  
+    return redirect()->route('spContacts.index')->with('success','Sponsor/partner contact updated successfully');  
 }
 
     /**
@@ -135,6 +135,6 @@ class EventContactController extends Controller
     public function destroy($id)
     {
         Contact::find($id)->delete();  
-        return redirect()->route('eventContacts.index')->with('success','Event contact removed successfully'); 
+        return redirect()->route('spContacts.index')->with('success','Sponsor/Partner contact removed successfully'); 
     }
 }

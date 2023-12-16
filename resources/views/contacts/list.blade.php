@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
 @section('content') 
 
@@ -25,7 +25,7 @@
                 <div class="pull-right">
                  @if (Auth::user()->admin === 1)
 
-                    <a href="/contacts/create" class="btn btn-default">Adaugare Contact Nou</a> 
+                    <a href="/contacts/create" class="btn btn-info">Adaugare Contact Nou</a> 
                  @endif
                 </div> 
 
@@ -89,13 +89,13 @@
                 @endif 
 
             </table>
-            <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
+
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('partnerSponsors.index')}}'">Parteneri/Sponsori</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
-
-
+            <button class="btn btn-primary" onclick="window.location.href='{{route('spContacts.index')}}'">Parteneri/Sponsori Contact</button>
 
 
             <!-- Introduce nr pagina --> 

@@ -121,7 +121,7 @@ class EventContactController extends Controller
         'id_contact' => 'required',  
     ]);  
 
-    EventContacts::find($id)->update($request->all());  
+    EventContact::find($id)->update($request->all());  
 
     return redirect()->route('agendas.index')->with('success','Agenda updated successfully');  
 }

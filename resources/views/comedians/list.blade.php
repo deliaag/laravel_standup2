@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
@@ -15,7 +15,11 @@
         <div class="panel-body">
             <div class="form-group">
                 <div class="pull-right">
+                    @if (Auth::user()->admin === 1)
+
                     <a href="/comedians/create" class="btn btn-default">Adaugare Comediant Nou</a>
+
+                    @endif
                 </div>
             </div>
 
@@ -35,11 +39,14 @@
                             <td>
                                 <a class="btn btn-success"
                                     href="{{ route('comedians.show',$comediant->id_comediant) }}">Vizualizare</a>
+                                @if (Auth::user()->admin === 1)
+
                                 <a class="btn btn-primary"
                                     href="{{ route('comedians.edit',$comediant->id_comediant) }}">Modificare</a>
                                 {{ Form::open(['method' => 'DELETE','route' =>['comedians.destroy', $comediant->id_comediant],'style'=>'display:inline']) }}
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
                                 {{ Form::close() }}
+                                @endif
                             </td>
                         </tr>
                     @endforeach

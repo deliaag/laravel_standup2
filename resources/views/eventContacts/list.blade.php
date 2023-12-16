@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
 @section('content') 
 
@@ -22,9 +22,13 @@
 
             <div class="form-group"> 
 
-                <div class="pull-right"> 
+                <div class="pull-right">
+                    @if (Auth::user()->admin === 1)
 
-                    <a href="/eventContacts/create" class="btn btn-default">Adaugare event contact Nou</a> 
+
+                    <a href="/eventContacts/create" class="btn btn-default">Adaugare event contact Nou</a>
+
+                    @endif
 
                 </div> 
 
@@ -60,7 +64,8 @@
 
                             <td> 
 
-                                <a class="btn btn-success" href="{{ route('eventContacts.show', $eventContact->id_rep_cont) }}">Vizualizare</a> 
+                                <a class="btn btn-success" href="{{ route('eventContacts.show', $eventContact->id_rep_cont) }}">Vizualizare</a>
+                                @if (Auth::user()->admin === 1)
 
                                 <a class="btn btn-primary" href="{{ route('eventContacts.edit', $eventContact->id_rep_cont) }}">Modificare</a> 
 
@@ -68,7 +73,9 @@
 
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
-                                {{ Form::close() }} 
+                                {{ Form::close() }}
+
+                                @endif
 
                             </td> 
 

@@ -16,19 +16,17 @@
 
         <div class="panel-heading"> 
 
-            Lista contactelor 
+            Lista parteneri / sponsori 
 
         <div class="panel-body"> 
 
             <div class="form-group"> 
 
                 <div class="pull-right">
-                 @if (Auth::user()->admin === 1)
-
-                    <a href="/contacts/create" class="btn btn-default">Adaugare Contact Nou</a> 
-                 @endif
+                @if (Auth::user()->admin === 1)
+                    <a href="/partnerSponsors/create" class="btn btn-default">Adaugare Partener / Sponsor Nou</a> 
                 </div> 
-
+                @endif
             </div> 
 
             <table class="table table-bordered table-stripped"> 
@@ -45,28 +43,27 @@
 
                 </tr> 
 
-                @if (count($contacts) > 0) 
+                @if (count($partnerSponsors) > 0) 
 
-                    @foreach ($contacts as $key => $contact) 
+                    @foreach ($partnerSponsors as $key => $partnerSponsor) 
 
                         <tr> 
 
                             <td>{{ ++$i }}</td> 
 
-                            <td>{{ $contact->name }}</td> 
+                            <td>{{ $partnerSponsor->name }}</td> 
 
-                            <td>{{ $contact->email }}</td> 
+                            <td>{{ $partnerSponsor->email }}</td> 
 
-                            <td>{{ $contact->phone }}</td> 
+                            <td>{{ $partnerSponsor->phone }}</td> 
 
                             <td> 
 
-                                <a class="btn btn-success" href="{{ route('contacts.show', $contact->id_contact) }}">Vizualizare</a> 
+                                <a class="btn btn-success" href="{{ route('partnerSponsors.show', $partnerSponsor->id_sp) }}">Vizualizare</a> 
                                  @if (Auth::user()->admin === 1)
+                                <a class="btn btn-primary" href="{{ route('partnerSponsors.edit', $partnerSponsor->id_sp) }}">Modificare</a> 
 
-                                <a class="btn btn-primary" href="{{ route('contacts.edit', $contact->id_contact) }}">Modificare</a> 
-
-                                {{ Form::open(['method' => 'DELETE', 'route' => ['contacts.destroy', $contact->id_contact], 'style' => 'display:inline']) }} 
+                                {{ Form::open(['method' => 'DELETE', 'route' => ['partnerSponsors.destroy', $partnerSponsor->id_sp], 'style' => 'display:inline']) }} 
 
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
@@ -91,19 +88,17 @@
             </table>
             <a class="btn btn-default" href="http://127.0.0.1:8000/">Inapoi</a>
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
-            <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('events.index')}}'">Evenimente</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
-
-
-
 
             <!-- Introduce nr pagina --> 
 
-            {{ $contacts->render() }} 
+            {{ $partnerSponsors->render() }} 
 
         </div> 
 
     </div> 
 
-@endsection 
+@endsection

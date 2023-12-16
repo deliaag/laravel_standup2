@@ -1,4 +1,4 @@
-@extends('layouts.master') 
+@extends('layouts.app') 
 
 @section('content') 
 
@@ -22,9 +22,12 @@
 
             <div class="form-group"> 
 
-                <div class="pull-right"> 
+                <div class="pull-right">
+                     @if (Auth::user()->admin === 1)
 
                     <a href="/agendas/create" class="btn btn-default">Adaugare Agenda Noua</a> 
+
+                    @endif
 
                 </div> 
 
@@ -70,15 +73,19 @@
 
                             <td> 
 
-                                <a class="btn btn-success" href="{{ route('agendas.show', $agenda->id_agenda) }}">Vizualizare</a> 
+                                <a class="btn btn-success" href="{{ route('agendas.show', $agenda->id_agenda) }}">Vizualizare</a>
 
-                                <a class="btn btn-primary" href="{{ route('agendas.edit', $agenda->id_agenda) }}">Modificare</a> 
+                                @if (Auth::user()->admin === 1)
+
+                                <a class="btn btn-primary" href="{{ route('agendas.edit', $agenda->id_agenda) }}">Modificare</a>
+                                
 
                                 {{ Form::open(['method' => 'DELETE', 'route' => ['agendas.destroy', $agenda->id_agenda], 'style' => 'display:inline']) }} 
 
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
-                                {{ Form::close() }} 
+                                {{ Form::close() }}
+                                @endif
 
                             </td> 
 

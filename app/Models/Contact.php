@@ -13,4 +13,10 @@ class Contact extends Model
 
     public $fillable=['id_contact', 'name', 'email', 'phone'];
    // use HasFactory;
+
+
+   public function eventContacts()
+   {
+       return $this->hasMany('App\EventContact', 'id_rep_cont');
+   }
 }

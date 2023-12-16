@@ -18,5 +18,10 @@ class Event extends Model
         return $this->hasMany('App\Agenda', 'id_event');
     }
 
+     public function eventContacts()
+    {
+        return $this->hasMany('App\EventContact', 'id_rep_cont');
+    }
+
     //use HasFactory;
 }

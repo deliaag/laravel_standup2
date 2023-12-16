@@ -4,7 +4,8 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ComediantController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\AgendaController; 
+use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\EventContactController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::resource('events', EventController::class);
 
 Route::get('/', [AgendaController::class, 'index']);    
 Route::resource('agendas', AgendaController::class); 
+
+Route::get('/', [EventContactController::class, 'index']);    
+Route::resource('eventContacts', EventContactController::class); 

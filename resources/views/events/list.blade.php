@@ -66,7 +66,7 @@
 
             <a class="btn btn-success" href="{{ route('events.show', $event->id_event) }}">Vizualizare</a> 
 
-            <a class="btn btn-primary" href="{{ route('events.edit', $event->id_event) }}">Modificare</a> 
+            <a class="btn btn-primary" href="{{ route('events.edit', $event->id_event) }}">Modificare</a
 
      {{ Form::open(['method' => 'DELETE','route' => ['events.destroy', $event->id_event],'style'=>'display:inline']) }} 
 
@@ -87,6 +87,7 @@
             <button class="btn btn-primary" onclick="window.location.href='{{route('comedians.index')}}'">Comedianti</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('contacts.index')}}'">Contacte</button>
             <button class="btn btn-primary" onclick="window.location.href='{{route('agendas.index')}}'">Agende</button>
+            <button class="btn btn-primary" onclick="window.location.href='{{route('eventContacts.index')}}'">Event Contact</button>
 
             <!-- Introduce nr pagina --> 
 

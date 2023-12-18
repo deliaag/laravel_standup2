@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Models",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\database",
-    "\\database\\migrations",
+    "\\database\\seeders",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\agendas",
-    "\\resources\\views\\comedians",
-    "\\resources\\views\\eventContacts",
-    "\\resources\\views\\events"
+    "\\resources\\views\\layouts",
+    "\\routes"
   ],
+  "SelectedNode": "\\database\\seeders\\TicketsSeeder.php",
   "PreviewInSolutionExplorer": false
 }

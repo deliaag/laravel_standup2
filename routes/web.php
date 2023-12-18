@@ -21,39 +21,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*
-Route::get('/', [ContactController::class, 'index']);
-Route::resource('contacts', ContactController::class);
-
-Route::get('/', [ComediantController::class, 'index']);  
-Route::resource('comedians', ComediantController::class);
-
-Route::get('/', [EventController::class, 'index']);  
-Route::resource('events', EventController::class); 
-
-Route::get('/', [AgendaController::class, 'index']);    
-Route::resource('agendas', AgendaController::class); 
-
-Route::get('/', [EventContactController::class, 'index']);    
-Route::resource('eventContacts', EventContactController::class); 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/
-
 Route::get('/', function () {
     return redirect()->route('login'); // Redirecționează către pagina de login atunci când deschizi aplicația
 });
 Auth::routes();
  
-    /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::group(['middleware' => 'auth'], function(){
-    Route::get('/', [EventController::class, 'index']);
-    Route::resource('events', EventController::class);// Ruta de resurse va genera CRUD URI
-*/
 Route::get('/home', [HomeController::class, 'index'])->name('home');
- 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
  
